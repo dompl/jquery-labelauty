@@ -1,16 +1,36 @@
+># **This repository is no longer mantained.**
+>
+> I recommend you to use reactive and modern JavaScript frameworks, such as VueJS and React.
+
 Labelauty jQuery Plugin
 =========
 
-A nice and lightweigth jQuery plugin that gives beauty to checkboxes and
+A nice and lightweight jQuery plugin that gives beauty to checkboxes and
 radio buttons and allows custom labels for each status of (un)checked inputs.
 
-Demo: http://fntneves.github.io/jquery-labelauty
+**Demo:** http://fntneves.github.io/jquery-labelauty
 
+__Note:__ Labelauty does not support Internet Explorer 7 and 8.
 
 Installation
 ------------
-~~~~
-bower install labelauty
+
+Install with Bower :
+
+~~~
+bower install labelauty --save
+~~~
+
+Install with NPM :
+
+~~~
+npm install labelauty --save
+~~~
+
+Install with Yarn :
+
+~~~
+yarn add labelauty
 ~~~
 
 
@@ -32,6 +52,13 @@ $(document).ready(function(){
 
 Simple, isn't it?
 
+Aria Uses
+----------
+To add a Aria attributes, just add a aria-label. Labelauty will add tabindex, role and checked attributes.
+
+~~~ html
+<input aria-label="This branch is awesome" type="checkbox"/>
+~~~
 
 Use Cases
 ----------
@@ -78,15 +105,15 @@ To choose a custom label for Unchecked and Checked states.
 __________
 __Message__
 
-Without separator, the __Message__ text will be the permament label. It means that label will not change between input state.
+Without separator, the __Message__ text will be the permanent label. It means that label will not change between input state.
 
 ~~~ html
 <input type="checkbox" data-labelauty="Synchronize my files"/>
 ~~~
-__________
-__Omited__
+___________
+__Omitted__
 
-By omiting this attribute, the default labels will be shown.
+By omitting this attribute, the default labels will be shown.
 
 ~~~ html
 <input type="checkbox"/>
@@ -102,10 +129,16 @@ Set a new `class` value that will be applied to changed inputs.
 $(":checkbox").labelauty({ class: "myclass" });
 ~~~
 
-When `label` is setted to `false`, only the input icon appears and changes.
+When `label` is set to `false`, only the input icon appears and changes.
 
 ~~~ js
 $(":checkbox").labelauty({ label: false });
+~~~
+
+When `icon` is set to `false`, only the input text label appears and changes.
+
+~~~ js
+$(":checkbox").labelauty({ icon: false });
 ~~~
 
 Change separator between custom labels, in __data-labelauty__ attribute.
@@ -113,6 +146,15 @@ Choose your separator with `separator`.
 
 ~~~ js
 $(":checkbox").labelauty({ separator: "-" });
+~~~
+
+Do you want to generate random ID's for all inputs?
+Change `force_random_id` to `true`.
+
+~~~ js
+$(":checkbox").labelauty({
+	force_random_id: true,
+});
 ~~~
 
 Do you want custom default labels?
@@ -157,16 +199,18 @@ Acknowledgements
 © 2013, Francisco Neves. Released under the [MIT License](License.md).
 
 **Labelauty** is authored and maintained by [Francisco Neves][francisconeves].
+
 [Contributors][c] can help to make this plugin better.
+
+You can follow [Trello of this repo](https://trello.com/b/bXfzw5mz/jquery-labelauty).
 
  * [My website](http://francisconeves.com) (francisconeves.com)
  * [Github](http://github.com/fntneves) (@fntneves)
  * [Twitter](http://twitter.com/fntneves) (@fntneves)
 
 [francisconeves]: http://www.francisconeves.com
-[c]:   http://github.com/fntneves/labelauty-jquery/contributors
-[jquery-labelauty.js]: https://github.com/fntneves/labelauty-jquery/blob/master/source/jquery-labelauty.js
-[jquery-labelauty.css]: https://github.com/fntneves/labelauty-jquery/blob/master/source/jquery-labelauty.css
-[images]: https://github.com/fntneves/labelauty-jquery/tree/master/source/images
-[Options]: https://github.com/fntneves/labelauty-jquery#options
-
+[c]:   http://github.com/fntneves/jquery-labelauty/contributors
+[jquery-labelauty.js]: https://github.com/fntneves/jquery-labelauty/blob/master/source/jquery-labelauty.js
+[jquery-labelauty.css]: https://github.com/fntneves/jquery-labelauty/blob/master/source/jquery-labelauty.css
+[images]: https://github.com/fntneves/jquery-labelauty/tree/master/source/images
+[Options]: https://github.com/fntneves/jquery-labelauty#options
